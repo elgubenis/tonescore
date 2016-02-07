@@ -1,0 +1,19 @@
+{
+  "name": "airscore",
+  "version": "0.0.2",
+  "description": "Rate strings (tweets, texts and more) by your own custom criteria",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://elgubenis@github.com/elgubenis/airscore.git"
+  },
+  "author": "Linus Gubenis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elgubenis/airscore/issues"
+  },
+  "homepage": "https://github.com/elgubenis/airscore#readme"
+}

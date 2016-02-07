@@ -1,15 +1,4 @@
-# airscore
-> Rate strings (tweets, texts and more) by your own custom criteria.
-
-## Install
-```sh
-$ npm install --save airscore
-```
-
-## Usage
-
-```js
-var Airscore = require('airscore');
+var Airscore = require('../index.js');
 
 var tweet = new Airscore();
 
@@ -31,8 +20,8 @@ tweet.addTone('positive', [
 
 tweet.addTone('negative', [
     { word: 'bad', weight: 1.5 },
-    { word: 'not', weight: 1 },
-    { word: 'negative', weight: 1 }
+    { word: 'not' },
+    { word: 'negative' }
 ]);
 
 // We can now call the method to get the individual scores.
@@ -55,41 +44,3 @@ console.log(score); // returns: { positive: '69.23%', negative: '30.77%' }
 // You are in control of the decimals aswell. (percent or not..)
 score = tweet.getScore({ balance: 'strict', percent: true, decimals: 6 });
 console.log(score); // returns: { positive: '69.230769%', negative: '30.769231%' }
-```
-
-## API
-
-### instance.set(key, value)
-- Sets the 'key' to 'value' in the instances attributes.
-
-###### instance.set('text', 'Hello im a text.')
-- Sets the instances words array to: ['Hello', 'im', 'a', 'text']
-
-###### instance.set('words', ['Hello', 'text'])
-- Sets the instances words array to: ['Hello', 'text']
-
-### instance.add('words', 'here')
-- Updates the instances words array to: ['Hello', 'text', 'here']
-
-### instace.addTone(string, [Array of indicators])
-- Adds one tone to the instance
-- A tone has many indicators
-- An indicator has the 'word' its identified by and a weight, the weight defaults to: 1
-- 1 indicator looks like that:
-```js
-{
-    word: 'Hello',
-    weight: 1
-}
-```
-
-### instance.getScore(options)
-- Gets the score
-- Accepts the following options:
-- balance: fair/strict defaults to: fair
-- decimals: the decimals for every result
-- percent: true or false defaults to: false
-
-## License
-
-MIT © [Linus Gubenis](http://www.elgubenis.com)
